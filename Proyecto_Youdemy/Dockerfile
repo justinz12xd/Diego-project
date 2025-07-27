@@ -1,32 +1,31 @@
-# Etapa 1: Build de la aplicación Vue.js
-FROM node:20-alpine AS build-stage
+# Stage 1: Build the Vue.js application
+FROM node:20-alpine AS builder
 
-# Establecer directorio de trabajo
 WORKDIR /app
 
-# Copiar package.json y package-lock.json (si existe)
+# Copy package files
 COPY package*.json ./
 
-# Instalar todas las dependencias (incluyendo devDependencies para el build)
-RUN npm ci
+# Install dependencies
+RUN npm install
 
-# Copiar el código fuente
+# Copy the rest of the application
 COPY . .
 
-# Construir la aplicación para producción
+# Build the Vue.js application
 RUN npm run build
 
-# Etapa 2: Servir con nginx
-FROM nginx:alpine AS production-stage
+# Stage 2: Create a minimal production image
+FROM nginx:alpine
 
-# Copiar archivos construidos desde la etapa anterior
-COPY --from=build-stage /app/dist /usr/share/nginx/html
+# Copy built files from builder stage
+COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Copiar configuración personalizada de nginx
-COPY nginx.conf /etc/nginx/nginx.conf
+# Copy custom nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Exponer puerto 8080 (requerido por Google Cloud Run)
+# Expose port 8080
 EXPOSE 8080
 
-# Comando para iniciar nginx en primer plano
+# Start nginx
 CMD ["nginx", "-g", "daemon off;"]
