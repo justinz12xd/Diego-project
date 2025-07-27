@@ -1,5 +1,5 @@
 # Etapa 1: Build de la aplicación Vue.js
-FROM node:18-alpine AS build-stage
+FROM node:20-alpine AS build-stage
 
 # Establecer directorio de trabajo
 WORKDIR /app
@@ -7,8 +7,8 @@ WORKDIR /app
 # Copiar package.json y package-lock.json (si existe)
 COPY package*.json ./
 
-# Instalar dependencias
-RUN npm ci --only=production
+# Instalar todas las dependencias (incluyendo devDependencies para el build)
+RUN npm ci
 
 # Copiar el código fuente
 COPY . .

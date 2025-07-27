@@ -29,7 +29,7 @@ try {
 
     # 3. Construir la imagen Docker
     Write-Host "🏗️ Construyendo imagen Docker..." -ForegroundColor Yellow
-    gcloud builds submit --tag $ImageName .
+    gcloud builds submit --tag $ImageName --timeout=20m .
 
     # 4. Desplegar en Cloud Run
     Write-Host "🚀 Desplegando en Cloud Run..." -ForegroundColor Yellow

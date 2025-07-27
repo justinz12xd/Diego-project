@@ -27,7 +27,7 @@ gcloud services enable containerregistry.googleapis.com
 
 # 3. Construir la imagen Docker
 echo "🏗️ Construyendo imagen Docker..."
-gcloud builds submit --tag $IMAGE_NAME .
+gcloud builds submit --tag $IMAGE_NAME --timeout=20m .
 
 # 4. Desplegar en Cloud Run
 echo "🚀 Desplegando en Cloud Run..."
