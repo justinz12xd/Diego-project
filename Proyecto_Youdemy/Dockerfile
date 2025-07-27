@@ -28,5 +28,5 @@ COPY nginx.conf /etc/nginx/nginx.conf
 # Exponer puerto 8080 (requerido por Google Cloud Run)
 EXPOSE 8080
 
-# Comando para iniciar nginx
+# Comando para iniciar nginx en primer plano
 CMD ["nginx", "-g", "daemon off;"]

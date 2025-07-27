@@ -16,28 +16,37 @@ spec:
         run.googleapis.com/cpu-throttling: "false"
         run.googleapis.com/memory: "512Mi"
         run.googleapis.com/cpu: "1000m"
+        # Timeout más largo para el startup
+        run.googleapis.com/timeout: "300"
     spec:
       containers:
       - image: gcr.io/PROJECT-ID/proyecto-youdemy:latest
         ports:
-        - containerPort: 8080
+        - name: http1
+          containerPort: 8080
         env:
         - name: NODE_ENV
           value: "production"
+        - name: PORT
+          value: "8080"
         resources:
           limits:
             cpu: "1000m"
             memory: "512Mi"
-        # Health check
+        # Health check más permisivo
         livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 60
+          timeoutSeconds: 10
+          failureThreshold: 3
+        readinessProbe:
           httpGet:
             path: /
             port: 8080
           initialDelaySeconds: 10
           periodSeconds: 30
-        readinessProbe:
-          httpGet:
-            path: /
-            port: 8080
-          initialDelaySeconds: 5
-          periodSeconds: 10
+          timeoutSeconds: 5
+          failureThreshold: 3
