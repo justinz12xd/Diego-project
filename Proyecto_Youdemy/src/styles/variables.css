@@ -1,0 +1,105 @@
+/* styles/variables.css - Variables CSS globales */
+
+:root {
+  /* Colores principales */
+  --primary-color: #9d0101;
+  --primary-hover: #ce0404;
+  --secondary-color: #6c757d;
+  --secondary-hover: #5a6268;
+  
+  --success-color: #28a745;
+  --success-hover: #218838;
+  --info-color: #17a2b8;
+  --info-hover: #138496;
+  --warning-color: #ffc107;
+  --warning-hover: #e0a800;
+  --danger-color: #e74c3c;
+  --danger-hover: #c0392b;
+  
+  --blue-primary: #3498db;
+  --blue-hover: #2980b9;
+  --green-primary: #27ae60;
+  --green-hover: #219a52;
+  
+  /* Colores de texto */
+  --text-primary: #2c3e50;
+  --text-secondary: #666;
+  --text-muted: #6c757d;
+  --text-white: #ffffff;
+  
+  /* Colores de fondo */
+  --bg-light: #f8f9fa;
+  --bg-white: #ffffff;
+  --bg-dark: rgba(91, 91, 91, 0.95);
+  --bg-overlay: rgba(0, 0, 0, 0.3);
+  
+  /* Bordes */
+  --border-light: #e9ecef;
+  --border-medium: #dee2e6;
+  --border-dark: #ddd;
+  
+  /* Espaciado */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-xxl: 3rem;
+  
+  /* Fuentes */
+  --font-size-xs: 0.8rem;
+  --font-size-sm: 0.9rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.1rem;
+  --font-size-xl: 1.3rem;
+  --font-size-xxl: 1.5rem;
+  --font-size-title: 2rem;
+  
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+  
+  /* Línea de altura */
+  --line-height-base: 1.5;
+  --line-height-sm: 1.3;
+  --line-height-lg: 1.6;
+  
+  /* Radio de borde */
+  --border-radius-sm: 4px;
+  --border-radius-base: 5px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 10px;
+  --border-radius-xl: 12px;
+  --border-radius-xxl: 15px;
+  
+  /* Sombras */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-base: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --shadow-overlay: 0 10px 30px rgba(0, 0, 0, 0.3);
+  
+  /* Transiciones */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* Z-index */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 2000;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  
+  /* Breakpoints */
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  
+  /* Contenedores */
+  --container-max-width: 1200px;
+  --container-padding: var(--spacing-xl);
+}

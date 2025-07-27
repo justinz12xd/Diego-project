@@ -1,0 +1,225 @@
+/* styles/components/forms.css - Estilos para formularios */
+
+.form-group,
+.campo-grupo {
+  margin-bottom: var(--spacing-lg);
+}
+
+.form-group label,
+.campo-grupo label {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  color: var(--text-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.form-control,
+.form-group input,
+.form-group textarea,
+.form-group select,
+.campo-grupo input,
+.campo-grupo textarea,
+.campo-grupo select {
+  width: 100%;
+  padding: var(--spacing-sm);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--border-radius-base);
+  font-size: var(--font-size-base);
+  font-family: inherit;
+  line-height: var(--line-height-base);
+  background-color: var(--bg-white);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.form-control:focus,
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus,
+.campo-grupo input:focus,
+.campo-grupo textarea:focus,
+.campo-grupo select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(157, 1, 1, 0.1);
+}
+
+.form-control:disabled,
+.form-group input:disabled,
+.form-group textarea:disabled,
+.form-group select:disabled {
+  background-color: var(--bg-light);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Tipos específicos de input */
+.input-imagen {
+  background-color: var(--bg-light) !important;
+}
+
+.input-youtube {
+  background-color: #fff3cd !important;
+  border-color: #ffeaa7 !important;
+}
+
+.input-youtube::placeholder {
+  color: #856404 !important;
+}
+
+/* File inputs */
+.file-input {
+  display: none;
+}
+
+.file-label {
+  display: inline-block;
+  background-color: var(--blue-primary);
+  color: var(--text-white);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: background-color var(--transition-base);
+  font-weight: var(--font-weight-bold);
+}
+
+.file-label:hover {
+  background-color: var(--blue-hover);
+}
+
+.file-help {
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  margin-top: var(--spacing-xs);
+  display: block;
+}
+
+/* Opciones de imagen */
+.imagen-options {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
+
+.upload-option {
+  padding: var(--spacing-md);
+  border: 2px dashed var(--success-color);
+  border-radius: var(--border-radius-md);
+  background-color: #f8fff9;
+  text-align: center;
+}
+
+.upload-label {
+  display: block;
+  cursor: pointer;
+  color: var(--success-color);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--spacing-sm);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-base);
+  transition: background-color var(--transition-base);
+}
+
+.upload-label:hover {
+  background-color: #e8f5e8;
+}
+
+/* Divider */
+.divider {
+  text-align: center;
+  position: relative;
+  margin: var(--spacing-sm) 0;
+}
+
+.divider span {
+  background: var(--bg-white);
+  padding: 0 var(--spacing-md);
+  color: var(--text-muted);
+  font-weight: var(--font-weight-bold);
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--border-medium);
+  z-index: 0;
+}
+
+/* Vista previa de imagen */
+.imagen-preview {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--border-radius-md);
+  background-color: var(--bg-light);
+  text-align: center;
+}
+
+.preview-img {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-base);
+  margin: var(--spacing-sm) 0;
+}
+
+/* Tips de YouTube */
+.youtube-tips {
+  margin-top: var(--spacing-sm);
+  padding: var(--spacing-md);
+  background-color: #fff3cd;
+  border-radius: var(--border-radius-base);
+  border-left: 4px solid var(--warning-color);
+}
+
+.youtube-tips p {
+  margin: 0 0 var(--spacing-sm) 0;
+  font-size: var(--font-size-sm);
+  color: #856404;
+}
+
+.youtube-tips ul {
+  margin: 0;
+  padding-left: var(--spacing-lg);
+  color: #856404;
+}
+
+.youtube-tips li {
+  font-size: var(--font-size-xs);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* Acciones de formulario */
+.form-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  margin-top: var(--spacing-xl);
+}
+
+/* Elementos de error */
+.error-message {
+  color: var(--danger-color);
+  font-size: var(--font-size-sm);
+  margin-top: var(--spacing-xs);
+  padding: var(--spacing-sm);
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: var(--border-radius-sm);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .form-actions .btn {
+    width: 100%;
+    margin-bottom: var(--spacing-sm);
+  }
+}

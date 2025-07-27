@@ -1,0 +1,424 @@
+/* styles/components/estudiante-view.css - Estilos específicos para EstudianteView */
+
+/* Vista principal de estudiante */
+.estudiante-view {
+  min-height: 100vh;
+  background: var(--bg-light);
+}
+
+/* Header específico de estudiante */
+.estudiante-header {
+  background: rgba(91, 91, 91, 0.95);
+  padding: var(--spacing-xl) var(--spacing-xl);
+  box-shadow: var(--shadow-base);
+}
+
+.header-content {
+  max-width: var(--container-xl);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.estudiante-header h1 {
+  color: var(--text-white);
+  margin: 0;
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-black);
+}
+
+/* Contenido principal */
+.estudiante-content {
+  max-width: var(--container-xl);
+  margin: var(--spacing-xl) auto;
+  padding: 0 var(--spacing-xl);
+}
+
+/* Sistema de tabs */
+.tabs {
+  display: flex;
+  margin-bottom: var(--spacing-xl);
+  background: var(--bg-white);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-base);
+}
+
+.tab {
+  flex: 1;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  background: var(--bg-white);
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  color: var(--text-secondary);
+  transition: all var(--transition-base);
+  font-weight: var(--font-weight-bold);
+}
+
+.tab.active {
+  background: var(--text-primary);
+  color: var(--text-white);
+}
+
+.tab:hover:not(.active) {
+  background: var(--bg-light);
+  color: var(--text-primary);
+}
+
+/* Grid de cursos disponibles */
+.cursos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  justify-content: center;
+  place-items: start center;
+  max-width: var(--container-xl);
+  margin: 0 auto;
+}
+
+/* Tarjeta de curso disponible */
+.curso-card {
+  background: var(--bg-white);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-base);
+  transition: transform var(--transition-slow);
+  border: 2px solid var(--border-light);
+  width: 100%;
+  max-width: 320px;
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.curso-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--blue-primary);
+  z-index: 10;
+}
+
+.curso-imagen {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.curso-card:hover .curso-imagen {
+  transform: scale(1.05);
+}
+
+.curso-info {
+  padding: var(--spacing-xl);
+}
+
+.curso-info h3 {
+  margin: 0 0 var(--spacing-lg) 0;
+  color: var(--text-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-black);
+  line-height: var(--line-height-tight);
+}
+
+.curso-info p {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+  line-height: var(--line-height-relaxed);
+  font-size: var(--font-size-sm);
+}
+
+.curso-actions {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Badge de inscrito */
+.inscrito-badge {
+  background: var(--success-color);
+  color: var(--text-white);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--border-radius-lg);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+/* Estado vacío */
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-3xl) var(--spacing-xl);
+  background: var(--bg-white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-base);
+}
+
+.empty-state h3 {
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-lg);
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-black);
+}
+
+.empty-state p {
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-xl);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Container de cursos inscritos */
+.inscritos-container {
+  background: var(--bg-white);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-base);
+}
+
+/* Curso inscrito individual */
+.curso-inscrito {
+  border: 1px solid var(--border-medium);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  background: var(--bg-light);
+  transition: border-color var(--transition-base);
+}
+
+.curso-inscrito:hover {
+  border-color: var(--primary-color);
+}
+
+.curso-header {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+  align-items: flex-start;
+}
+
+.curso-mini-imagen {
+  width: 100px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: var(--border-radius-md);
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.curso-title-info {
+  flex: 1;
+}
+
+.curso-title-info h3 {
+  margin: 0 0 var(--spacing-sm) 0;
+  color: var(--text-primary);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-black);
+}
+
+.curso-title-info p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Sección de tareas */
+.curso-tareas {
+  margin: var(--spacing-xl) 0;
+  padding: var(--spacing-lg);
+  background: var(--bg-white);
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.curso-tareas h4 {
+  margin: 0 0 var(--spacing-lg) 0;
+  color: var(--text-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-black);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.upload-section {
+  margin-bottom: var(--spacing-lg);
+}
+
+.file-input {
+  display: none;
+}
+
+.file-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  background: var(--blue-primary);
+  color: var(--text-white);
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  transition: background-color var(--transition-base);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+}
+
+.file-label:hover {
+  background: var(--blue-hover);
+  transform: translateY(-1px);
+}
+
+/* Tareas subidas */
+.tareas-subidas {
+  margin-top: var(--spacing-lg);
+}
+
+.tareas-subidas h5 {
+  margin: 0 0 var(--spacing-md) 0;
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-black);
+}
+
+.tarea-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md);
+  background: var(--bg-light);
+  border-radius: var(--border-radius-sm);
+  margin-bottom: var(--spacing-sm);
+  border: 1px solid var(--border-light);
+  transition: border-color var(--transition-base);
+}
+
+.tarea-item:hover {
+  border-color: var(--border-dark);
+}
+
+.tarea-nombre {
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  font-size: var(--font-size-sm);
+  flex: 1;
+  margin-right: var(--spacing-md);
+}
+
+.tarea-fecha {
+  color: var(--text-muted);
+  font-size: var(--font-size-xs);
+  margin-right: var(--spacing-md);
+}
+
+.btn-eliminar-tarea {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  padding: var(--spacing-xs);
+  transition: transform var(--transition-base);
+  color: var(--danger-color);
+}
+
+.btn-eliminar-tarea:hover {
+  transform: scale(1.2);
+  color: var(--danger-hover);
+}
+
+/* Responsive específico para EstudianteView */
+@media (max-width: 768px) {
+  .estudiante-content {
+    padding: 0 var(--spacing-lg);
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    text-align: center;
+  }
+  
+  .estudiante-header h1 {
+    font-size: var(--font-size-xl);
+  }
+  
+  .estudiante-header {
+    padding: var(--spacing-lg);
+  }
+  
+  .tabs {
+    flex-direction: column;
+  }
+  
+  .tab {
+    padding: var(--spacing-lg);
+    text-align: center;
+  }
+  
+  .cursos-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .curso-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .curso-mini-imagen {
+    width: 100%;
+    height: 120px;
+    align-self: center;
+  }
+  
+  .curso-actions {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+  
+  .curso-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .tarea-item {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    text-align: center;
+  }
+  
+  .tarea-nombre,
+  .tarea-fecha {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .estudiante-content {
+    padding: 0 var(--spacing-md);
+    margin: var(--spacing-lg) auto;
+  }
+  
+  .curso-inscrito {
+    padding: var(--spacing-lg);
+  }
+  
+  .curso-tareas {
+    padding: var(--spacing-md);
+  }
+  
+  .file-label {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
